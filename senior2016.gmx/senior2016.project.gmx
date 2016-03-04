@@ -7,7 +7,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\test</sprite>
-    <sprite>sprites\sync_test</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
