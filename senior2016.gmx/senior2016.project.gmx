@@ -5,9 +5,20 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\Cloud</sprite>
+    <sprite>sprites\Floor_1</sprite>
+    <sprite>sprites\sprite4</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\Dirt_floot</object>
+    <object>objects\Background_object_cloud</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\Test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
