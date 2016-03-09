@@ -7,19 +7,19 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\Cloud</sprite>
-    <sprite>sprites\Floor_1</sprite>
-    <sprite>sprites\sprite4</sprite>
-    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\spr_floorG</sprite>
+    <sprite>sprites\spr_floorD</sprite>
+    <sprite>sprites\spr_player</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\Dirt_floot</object>
     <object>objects\Background_object_cloud</object>
-    <object>objects\object0</object>
+    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Test</room>
+    <room>rooms\rm_beginner</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
