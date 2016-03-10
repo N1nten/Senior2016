@@ -16,14 +16,15 @@
       <sprite>sprites\ani_saturn_walk_l</sprite>
       <sprite>sprites\spr_saturn_idle</sprite>
     </sprites>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
-    <object>objects\Dirt_floot</object>
+    <object>objects\obj_floor_1</object>
     <object>objects\Background_object_cloud</object>
-    <object>objects\obj_chr</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_beginner</room>
