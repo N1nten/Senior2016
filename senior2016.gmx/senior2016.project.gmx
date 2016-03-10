@@ -24,7 +24,6 @@
     <object>objects\obj_floor_1</object>
     <object>objects\Background_object_cloud</object>
     <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_beginner</room>

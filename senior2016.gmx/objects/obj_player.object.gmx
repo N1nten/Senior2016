@@ -67,15 +67,15 @@ move = key_left + key_right;
 hsp = move * movespeed;
 if (vsp &lt; 10) vsp += grav;
 
-if (place_meeting(x,y+1,obj_wall))
+if (place_meeting(x,y+1,obj_floor_1))
 {
     vsp = key_jump * -jumpspeed
 }
 
 //horizontal collision
-if (place_meeting(x+hsp,y,obj_wall))
+if (place_meeting(x+hsp,y,obj_floor_1))
 {
-    while(!place_meeting(x+sign(hsp),y,obj_wall))
+    while(!place_meeting(x+sign(hsp),y,obj_floor_1))
     {
         x += sign(hsp);
     }
@@ -84,15 +84,19 @@ if (place_meeting(x+hsp,y,obj_wall))
 x += hsp;
 
 //verticle collision
-if (place_meeting(x,y+vsp,obj_wall))
+if (place_meeting(x,y+vsp,obj_floor_1))
 {
-    while(!place_meeting(x,y+sign(vsp),obj_wall))
+    while(!place_meeting(x,y+sign(vsp),obj_floor_1))
     {
         y += sign(vsp);
     }
     vsp = 0;
 }
 y += vsp;
+
+//friction
+
+friction = .5
 </string>
           </argument>
         </arguments>
