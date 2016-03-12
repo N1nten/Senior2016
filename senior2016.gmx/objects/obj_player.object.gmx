@@ -72,6 +72,12 @@ if (place_meeting(x,y+1,obj_floor_1))
     vsp = key_jump * -jumpspeed
 }
 
+if (key_jump) &amp;&amp; (place_meeting(x+1,y,obj_floor_1) || place_meeting(x-1,y,obj_floor_1))
+{
+    vsp = -jumpspeed;
+}
+
+
 //horizontal collision
 if (place_meeting(x+hsp,y,obj_floor_1))
 {
@@ -96,7 +102,7 @@ y += vsp;
 
 //friction
 
-friction = .5
+friction = .2
 </string>
           </argument>
         </arguments>
