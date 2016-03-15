@@ -19,6 +19,11 @@
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\spr_enemy1</sprite>
     <sprite>sprites\coin</sprite>
+    <sprites name="Marth">
+      <sprite>sprites\idle</sprite>
+      <sprite>sprites\walking_L</sprite>
+      <sprite>sprites\attack_left</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
