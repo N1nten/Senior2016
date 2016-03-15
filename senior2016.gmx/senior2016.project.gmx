@@ -18,7 +18,6 @@
     </sprites>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\spr_enemy1</sprite>
-    <sprite>sprites\coin</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,8 +26,6 @@
     <object>objects\Background_object_cloud</object>
     <object>objects\obj_player</object>
     <object>objects\obj_floor_2</object>
-    <object>objects\obj_coin</object>
-    <object>objects\obj_score</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_beginner</room>
