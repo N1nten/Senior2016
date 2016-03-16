@@ -20,9 +20,11 @@
     <sprite>sprites\spr_enemy1</sprite>
     <sprite>sprites\coin</sprite>
     <sprites name="Marth">
-      <sprite>sprites\idle</sprite>
-      <sprite>sprites\walking_L</sprite>
-      <sprite>sprites\attack_left</sprite>
+      <sprite>sprites\m_idle</sprite>
+      <sprite>sprites\m_idle_l</sprite>
+      <sprite>sprites\m_walk</sprite>
+      <sprite>sprites\m_run</sprite>
+      <sprite>sprites\m_attack</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
