@@ -27,6 +27,7 @@
       <sprite>sprites\m_attack</sprite>
     </sprites>
     <sprite>sprites\spr_Grey</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -37,6 +38,7 @@
     <object>objects\obj_floor_2</object>
     <object>objects\obj_coin</object>
     <object>objects\obj_score</object>
+    <object>objects\obj_enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_beginner</room>
