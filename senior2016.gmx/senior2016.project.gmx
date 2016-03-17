@@ -26,6 +26,7 @@
       <sprite>sprites\m_run</sprite>
       <sprite>sprites\m_attack</sprite>
     </sprites>
+    <sprite>sprites\spr_Grey</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
