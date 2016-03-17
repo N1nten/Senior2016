@@ -32,11 +32,8 @@ vsp = 0;
 jumpspeed = 7;
 movespeed = 3;
 
-accel=.4;          //adjust to what suits your needs
-decel=.2;
-maxhsp=5;
+image_speed = .1
 
-image_speed = 0.2;
 
 </string>
           </argument>
@@ -134,10 +131,10 @@ y += vsp;
 
 //variable jump
 //Check if the jump key has been released
-key_jump_released = keyboard_check_released(vk_space);
+//key_jump_released = keyboard_check_released(vk_space);
 
 //If it has, and your character is still rising, divide vertical momentum by 2
-if (key_jump_released &amp;&amp; vsp &lt; 0) vsp /= 2;
+//if (key_jump_released &amp;&amp; vsp &lt; 0) vsp /= 2;
  
 </string>
           </argument>
@@ -190,27 +187,9 @@ else if abs(hsp)&gt;0 sprite_index = m_walk; // Any speed lower than running spe
 else sprite_index = m_idle; // 0 speed means we are idle
 
 if keyboard_check_released(vk_left) sprite_index = m_idle_l;
+if key_jump sprite_index = m_jump;
+
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -232,6 +211,7 @@ if keyboard_check_released(vk_left) sprite_index = m_idle_l;
             <kind>1</kind>
             <string>/// alt for attack
 if (keyboard_check(vk_alt)) sprite_index = m_attack; 
+if (keyboard_check(vk_space)) sprite_index = m_jump;
 </string>
           </argument>
         </arguments>
