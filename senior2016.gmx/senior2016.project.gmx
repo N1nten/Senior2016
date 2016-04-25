@@ -21,11 +21,12 @@
     <sprite>sprites\coin</sprite>
     <sprites name="Marth">
       <sprite>sprites\m_idle</sprite>
-      <sprite>sprites\m_idle_l</sprite>
       <sprite>sprites\m_walk</sprite>
       <sprite>sprites\m_run</sprite>
       <sprite>sprites\m_attack</sprite>
       <sprite>sprites\m_jump</sprite>
+      <sprite>sprites\everything</sprite>
+      <sprite>sprites\m_falling</sprite>
     </sprites>
     <sprite>sprites\spr_Grey</sprite>
     <sprite>sprites\spr_enemy</sprite>

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>m_idle</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -34,13 +34,17 @@ movespeed = 3;
 
 image_speed = .1
 
+//Create Event
+xspeed = 0;
+yspeed = 0;
+precision = 1; //1 is fine in most cases, 0.1 can be used but will need a better CPU to handle
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,14 +61,14 @@ image_speed = .1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///end walk
-if sign(hsp)!=0 image_xscale=sign(hsp);
+            <string>///Border
+
+x = max(x,5);
+x= min(x,room_width);
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -129,89 +133,34 @@ y += vsp;
 //experimental
 
 
-//variable jump
-//Check if the jump key has been released
-//key_jump_released = keyboard_check_released(vk_space);
+//animations
+if (move!=0) image_xscale = move;
+if (place_meeting (x,y+1,obj_floor_2))
+{
+    if (move!=0) sprite_index = m_walk; else sprite_index = m_idle;
+}
+else
+{
+    if (vsp &lt; 0) sprite_index = m_jump; else sprite_index = m_falling
+}
 
-//If it has, and your character is still rising, divide vertical momentum by 2
-//if (key_jump_released &amp;&amp; vsp &lt; 0) vsp /= 2;
- 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Border
-
-x = max(x,5);
-x= min(x,room_width);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///sprite sprinting
-//sprite change
-if abs(hsp)&gt;=4        sprite_index = m_run; // Running animation is reached at higher speed
-else if abs(hsp)&gt;0 sprite_index = m_walk; // Any speed lower than running speed warrants walking speed.
-else sprite_index = m_idle; // 0 speed means we are idle
-
-if keyboard_check_released(vk_left) sprite_index = m_idle_l;
-if key_jump sprite_index = m_jump;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// alt for attack
-if (keyboard_check(vk_alt)) sprite_index = m_attack; 
-if (keyboard_check(vk_space)) sprite_index = m_jump;
+//Step Event
+for(var i = 0; i &lt; abs(xspeed); i+= precision){
+    var dx = sign(xspeed)/precision;
+    if (place_free(x+dx, y)){
+        x+= dx;
+    } else {
+        xspeed = 0;
+    }
+}
+for(var i = 0; i &lt; abs(yspeed); i+= precision){
+    var dy = sign(yspeed)/precision;
+    if (place_free(x, y+dy)){
+        y+= dy;
+    } else {
+        yspeed = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
