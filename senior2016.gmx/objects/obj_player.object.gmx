@@ -34,7 +34,7 @@ movespeed = 3;
 
 image_speed = .1
 
-//Create Event
+//testing - no effect
 xspeed = 0;
 yspeed = 0;
 precision = 1; //1 is fine in most cases, 0.1 can be used but will need a better CPU to handle
@@ -144,7 +144,9 @@ else
     if (vsp &lt; 0) sprite_index = m_jump; else sprite_index = m_falling
 }
 
-//Step Event
+    if ( (hsp=0) &amp;&amp; keyboard_check(vk_alt) ) sprite_index = m_attack
+
+//testing - no effect on brick
 for(var i = 0; i &lt; abs(xspeed); i+= precision){
     var dx = sign(xspeed)/precision;
     if (place_free(x+dx, y)){
